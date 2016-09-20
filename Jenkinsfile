@@ -49,8 +49,8 @@ node {
 
   stage ('deploy') {
 
-  def name = "croc-hunter"
-  def replicas = "1"
+  def name = "croc-hunter-qa"
+  def replicas = "3"
   def cpu = "10m"
   def memory = "128Mi"
 
