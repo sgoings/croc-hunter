@@ -6,17 +6,16 @@
 
 [![CircleCI](https://circleci.com/gh/lachie83/croc-hunter.svg?style=svg)](https://circleci.com/gh/lachie83/croc-hunter)
 
+# Use Makefile + Docker to Build
 
-# Deploy using Deis Workflow
-## Dockerfile
-Add Dockerfile to your repo
 ```
-cd <repo-path>
-deis create
-git push deis master
+make build
+make test
+make docker_build
 ```
-## Docker images
-```
-deis create --no-remote
-deis pull <repo>/<image-name> -a <app-name>
-```
+
+# Use Captain to Build
+
+https://github.com/harbur/captain
+
+# Use Wercker to Build

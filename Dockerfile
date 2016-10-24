@@ -1,4 +1,4 @@
-FROM golang:1.6-alpine
+FROM quay.io/deis/base:v0.3.4
 
 MAINTAINER Lachlan Evenson <lachlan.evenson@gmail.com>
 
@@ -11,13 +11,9 @@ LABEL org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.docker.dockerfile="/Dockerfile"
 
-COPY . /go/src/github.com/lachie83/croc-hunter
-COPY static/ static/
-
-ENV GOPATH /go
-RUN cd $GOPATH/src/github.com/lachie83/croc-hunter && go install -v .
+COPY /bin /bin
+COPY /static /static
 
 CMD ["croc-hunter"]
 
 EXPOSE 8080
-	
