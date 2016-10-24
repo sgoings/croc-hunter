@@ -18,4 +18,10 @@ make docker_build
 
 https://github.com/harbur/captain
 
+```
+# git has changes: tagged as latest
+# git has no changes: tagged as COMMIT_ID & BRANCH_NAME
+captain build
+```
+
 # Use Wercker to Build
