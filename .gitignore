@@ -3,3 +3,4 @@ vendor/
 *.tgz
 /bin
 /coverage.txt
+/.wercker

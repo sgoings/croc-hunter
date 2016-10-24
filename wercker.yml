@@ -1,0 +1,26 @@
+box: quay.io/deis/go-dev:0.17.0
+build:
+  steps:
+    - script:
+        name: arch
+        code: |
+          uname -a
+    - wercker/golint
+    - script:
+        name: go build
+        code: |
+          go build -o croc-hunter ./...
+    - script:
+        name: go test
+        code: |
+          go test ./...
+    - script:
+        name: copy binary
+        code: cp croc-hunter "$WERCKER_OUTPUT_DIR"
+deploy:
+  box: quay.io/deis/base:v0.3.4
+  steps:
+  - script:
+      name: run
+      code: |
+        ./croc-hunter

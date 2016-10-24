@@ -22,6 +22,9 @@ https://github.com/harbur/captain
 # git has changes: tagged as latest
 # git has no changes: tagged as COMMIT_ID & BRANCH_NAME
 captain build
+captain test # intended to be a blackbox style test
 ```
 
 # Use Wercker to Build
+
+wercker build
