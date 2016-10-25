@@ -58,6 +58,10 @@ all: build
 
 .PHONY: build
 build:
+	${DEV_ENV_CMD} make binary-build
+
+.PHONY: binary-build
+binary-build:
 	GOOS=linux GOARCH=amd64 $(GO) build -o ${BINDIR}/${SHORT_NAME} $(GOFLAGS) -tags '$(TAGS)' -ldflags '$(LDFLAGS)' github.com/lachie83/croc-hunter/...
 
 test: test-style test-unit test-functional

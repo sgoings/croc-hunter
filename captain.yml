@@ -1,5 +1,7 @@
 croc-hunter:
+  image: lachie83/croc-hunter
   pre:
     - make build
   build: Dockerfile
-  image: lachie83/croc-hunter
+  test:
+    - docker run -p 8080:8080 lachie83/croc-hunter

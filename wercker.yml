@@ -16,11 +16,4 @@ build:
           go test ./...
     - script:
         name: copy binary
-        code: cp croc-hunter "$WERCKER_OUTPUT_DIR"
-deploy:
-  box: quay.io/deis/base:v0.3.4
-  steps:
-  - script:
-      name: run
-      code: |
-        ./croc-hunter
+        code: cp -r croc-hunter static "$WERCKER_OUTPUT_DIR"

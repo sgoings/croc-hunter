@@ -6,15 +6,16 @@
 
 [![CircleCI](https://circleci.com/gh/lachie83/croc-hunter.svg?style=svg)](https://circleci.com/gh/lachie83/croc-hunter)
 
-# Use Makefile + Docker to Build
+# Makefile
 
 ```
 make build
 make test
 make docker_build
+make docker_push
 ```
 
-# Use Captain to Build
+# Captain
 
 https://github.com/harbur/captain
 
@@ -25,6 +26,9 @@ captain build
 captain test # intended to be a blackbox style test
 ```
 
-# Use Wercker to Build
+# Wercker
 
-wercker build
+```
+wercker build --artifacts
+wercker deploy # currently runs docker container
+```
